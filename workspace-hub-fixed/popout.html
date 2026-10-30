@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Account</title>
+  <style>html, body { margin: 0; height: 100%; } webview { width: 100%; height: 100%; display: flex; }</style>
+</head>
+<body>
+<script>
+  const q = new URLSearchParams(location.search);
+  document.title = q.get('title') || 'Account';
+  const wv = document.createElement('webview');
+  wv.src = q.get('url') || 'about:blank';
+  wv.setAttribute('partition', q.get('partition') || 'persist:popout');
+  wv.setAttribute('useragent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36');
+  document.body.appendChild(wv);
+</script>
+</body>
+</html>

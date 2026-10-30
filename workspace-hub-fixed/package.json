@@ -1,0 +1,52 @@
+{
+ "build": {
+  "appId": "com.workspacehub.app",
+  "files": [
+   "main.js",
+   "preload.js",
+   "index.html",
+   "icon.png",
+   "icon.ico",
+   "package.json",
+   "popout.html",
+   "UPDATE-GUIDE.md",
+   "astryx-theme.css",
+   "astryx-themes.js"
+  ],
+  "nsis": {
+   "allowToChangeInstallationDirectory": true,
+   "oneClick": false
+  },
+  "productName": "Pro Workspace Hub",
+  "win": {
+   "target": [
+    "nsis"
+   ],
+   "icon": "icon.ico"
+  },
+  "publish": {
+   "provider": "github",
+   "owner": "rajabytee",
+   "repo": "ByteHub"
+  }
+ },
+ "description": "Pro Workspace Hub — সব অ্যাকাউন্ট এক ডেস্কটপ অ্যাপে",
+ "devDependencies": {
+  "electron": "^33.0.0",
+  "electron-builder": "^24.13.3",
+  "electron-updater": "^6.8.11"
+ },
+ "main": "main.js",
+ "name": "my-workspace-hub",
+ "scripts": {
+  "dist": "electron-builder",
+  "start": "electron ."
+ },
+ "version": "10.0.0",
+ "dependencies": {
+  "@astryxdesign/cli": "^0.7.4",
+  "@astryxdesign/core": "^0.7.4",
+  "@astryxdesign/theme-neutral": "^0.7.4",
+  "@stylexjs/stylex": "^0.19.1"
+ }
+}
