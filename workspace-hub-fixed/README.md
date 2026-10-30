@@ -1,12 +1,31 @@
+## চালানো (ল্যাপটপ/ডেস্কটপে)
+
+```bash
+cd workspace-hub-fixed
+npm install
+npm start
+```
+
+প্রথমবার প্রতিটি অ্যাকাউন্টে লগইন করে নাও — প্রতিটার সেশন আলাদা থাকে, একবার লগইন করলেই মনে রাখে।
+
+## Installer বানানো (Windows)
+
+```bash
+npm run dist
+```
+
+`dist/` ফোল্ডারে `.exe` সেটআপ ফাইল তৈরি হবে। নিজের আইকন চাইলে `build/icon.ico` রেখে `package.json`-এর `build.win` অংশে `"icon": "build/icon.ico"` যোগ করো।
+
+## ফাইল
+
+- `main.js` — Electron main process (tray, auto-start, taskbar badge, notification click, session clear)
+- `preload.js` — নিরাপদ সেতু (notify, taskbar badge, auto-start, session clear)
+- `index.html` — পুরো UI + লজিক (workspace CRUD, shortcuts, context menu, DND, theme, wizard)
+- `icon.png` / `icon.ico` — অ্যাপ আইকন
+- `package.json` — dependencies + builder config
+
+
 # Pro Workspace Hub — v10 (সব ফিক্স + ফিচার)
-
-## UI রিডিজাইন (Astryx Neutral থিম)
-
-সম্পূর্ণ UI এখন [@astryxdesign](https://astryx.design) Neutral ডিজাইন সিস্টেমের token দিয়ে সাজানো — কোনো ফিচার বদলায়নি, শুধু দেখতে বদলেছে:
-- রঙ: `--color-*` semantic token (light/dark অটো — `body.light` হ্যাক মুছে ফেলা হয়েছে)
-- স্পেসিং: `--spacing-*`, কর্নার: `--radius-*`, ছায়া: `--shadow-*`
-- বাটন/ইনপুটে Astryx ফোকাস রিং, modal-এ `shadow-high`
-- থিম ফাইল: `astryx-theme.css` (`data-astryx-theme="neutral"`, `html[data-theme]` দিয়ে dark/light)
 
 ## v10-তে নতুন: ◫ Split view
 
@@ -100,31 +119,6 @@
 
 এছাড়া: ড্রয়ারের নোটিফিকেশন কার্ডে **ক্লিক করলে সংশ্লিষ্ট workspace + অ্যাপ** খুলে যায়; URL-এ `https://` না দিলে স্বয়ংক্রিয়ভাবে যোগ হয়।
 
-## চালানো (ল্যাপটপ/ডেস্কটপে)
-
-```bash
-cd workspace-hub-fixed
-npm install
-npm start
-```
-
-প্রথমবার প্রতিটি অ্যাকাউন্টে লগইন করে নাও — প্রতিটার সেশন আলাদা থাকে, একবার লগইন করলেই মনে রাখে।
-
-## Installer বানানো (Windows)
-
-```bash
-npm run dist
-```
-
-`dist/` ফোল্ডারে `.exe` সেটআপ ফাইল তৈরি হবে। নিজের আইকন চাইলে `build/icon.ico` রেখে `package.json`-এর `build.win` অংশে `"icon": "build/icon.ico"` যোগ করো।
-
-## ফাইল
-
-- `main.js` — Electron main process (tray, auto-start, taskbar badge, notification click, session clear)
-- `preload.js` — নিরাপদ সেতু (notify, taskbar badge, auto-start, session clear)
-- `index.html` — পুরো UI + লজিক (workspace CRUD, shortcuts, context menu, DND, theme, wizard)
-- `icon.png` / `icon.ico` — অ্যাপ আইকন
-- `package.json` — dependencies + builder config
 
 ## v3-তে নতুন (৭টা ফিচার)
 
